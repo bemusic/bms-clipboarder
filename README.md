@@ -15,9 +15,9 @@ __Note:__ These scripts only work with iBMSC. Pull requests to make it work with
 
 ### <kbd>Ctrl</kbd> <kbd>M</kbd> move notes
 
-This tool lets you move notes easily.
+This tool lets you move selected notes easily by typing the desired key sequence.
 
-__TK__ gif screencast
+![Imgur](http://i.imgur.com/1RJh6F0.gif)
 
 
 ### <kbd>Ctrl</kbd> <kbd>D</kbd> unmatch notes
