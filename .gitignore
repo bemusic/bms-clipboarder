@@ -1,3 +1,6 @@
+input.txt
+output.txt
+
 dist
 cabal-dev
 *.o

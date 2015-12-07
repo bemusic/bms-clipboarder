@@ -1,0 +1,20 @@
+# many parts of this script stolen from pandoc
+# https://github.com/jgm/pandoc/blob/master/appveyor.yml
+#
+install:
+- ps: |
+    choco install haskellplatform -version 2014.2.0.0 -y
+    $env:Path += ";${env:ProgramFiles}\Haskell Platform\2014.2.0.0\bin"
+    $env:Path += ";${env:ProgramFiles}\Haskell Platform\2014.2.0.0\lib\extralibs\bin"
+    $env:Path += ";${env:ProgramFiles}\Haskell Platform\2014.2.0.0\mingw\bin"
+    cabal sandbox init
+
+build_script:
+- cmd: |
+    cabal build
+
+test_script:
+- cmd: |
+    7z a bms-clipboarder.zip "BMS Clipboarder.ahk" dist\build\*\*.exe
+    appveyor PushArtifact bms-clipboarder.zip
+
