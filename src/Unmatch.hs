@@ -1,8 +1,8 @@
 
 import BMSClipboard
 import Data.List
-import Debug.Trace
 import Data.Maybe
+import Data.Functor
 
 unmatch objects = let
     bgms = filter isBGM objects

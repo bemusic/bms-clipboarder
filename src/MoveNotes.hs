@@ -2,7 +2,6 @@
 import BMSClipboard
 import System.Environment
 import Data.List
-import Debug.Trace
 import Data.Maybe
 
 sortObject a b
