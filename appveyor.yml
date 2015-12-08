@@ -3,10 +3,10 @@
 #
 install:
 - ps: |
-    choco install haskellplatform -version 7.10.2.2 -y
-    $env:Path += ";${env:ProgramFiles}\Haskell Platform\7.10.2.2\bin"
-    $env:Path += ";${env:ProgramFiles}\Haskell Platform\7.10.2.2\lib\extralibs\bin"
-    $env:Path += ";${env:ProgramFiles}\Haskell Platform\7.10.2.2\mingw\bin"
+    choco install haskellplatform -version 2014.2.0.0 -y
+    $env:Path += ";${env:ProgramFiles}\Haskell Platform\2014.2.0.0\bin"
+    $env:Path += ";${env:ProgramFiles}\Haskell Platform\2014.2.0.0\lib\extralibs\bin"
+    $env:Path += ";${env:ProgramFiles}\Haskell Platform\2014.2.0.0\mingw\bin"
     cabal sandbox init
 
 build_script:
