@@ -53,11 +53,23 @@ When the key is pressed, firstly, it sends <kbd>Ctrl+X</kbd>/<kbd>Ctrl+C</kbd> k
 Secondly, it invokes an individual tool, sending the data from clipboard.
 Lastly, it copies the result from the individual tool into clipboard and sends <kbd>Ctrl+V</kbd> key to paste notes.
 
+You can change the keyboard shortcut AND÷OR add more tools by editing __BMS Clipboarder.ahk__ file.
+
 
 ### 3.2 Individual tools
 
 This is a command-line program that reads BMS clipboard data from Standard Input,
 and return resulting clipboard data to Standard Output.
+
+Although these tools are written in Haskell, __you can create extra tools in any language__.
+You only need to make sure that it obeys the input/output format.
+
+Haskell is chosen because:
+
+- It can be compiled into `.exe` files very easily.
+- It has a very smart type system, which means shorter code.
+- It has a strong type system, which helps makes less bug-prone code.
+
 
 #### Input Format
 
@@ -99,7 +111,7 @@ When run the following command:
 dist\build\BGMize\BGMize.exe < input.txt
 ```
 
-It will print out
+It will print out:
 
 ```
 ok
@@ -117,4 +129,14 @@ iBMSC Clipboard Data xNT
 26 48 8740000 0 0
 26 24 8730000 0 0
 26 0 8720000 0 0
+```
+
+
+## 4. Development
+
+To work on individual tools, you need to install Haskell Platform.
+To compile the source codes into `.exe` files, run:
+
+```
+cabal build
 ```
