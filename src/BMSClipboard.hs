@@ -7,8 +7,10 @@ module BMSClipboard
 , isBGM
 , processBMSClipboard
 , setPlayerChannel
+, setBGMChannel
 , bgmChannelIndex
 , setKeysound
+, setLength
 , row
 , rawChannel
 ) where
@@ -70,11 +72,20 @@ setPlayerChannel index object@IBMSCObject { } =
                                6 -> 10
                                7 -> 11
 
+-- Returns an object with channel updated to player channel
+setBGMChannel :: Int -> BMSObject -> BMSObject
+setBGMChannel index object@IBMSCObject { } =
+    object { channel = 26 + index - 1 }
+
 -- Returns an index representing BGM channel, starting with 1
 bgmChannelIndex :: BMSObject -> Int
 bgmChannelIndex IBMSCObject { channel = c }
     | (c >= 26) = c - 26 + 1
 
+-- Set length
+setLength :: Int -> BMSObject -> BMSObject
+setLength len object@IBMSCObject { } =
+    object { BMSClipboard.length = (len * 10000) }
 
 setKeysound :: Int -> BMSObject -> BMSObject
 setKeysound index object@IBMSCObject { } =

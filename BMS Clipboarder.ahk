@@ -5,6 +5,7 @@
 
 ^m::
   InputBox script, Move notes, Enter script (a)[z][s][x][d][c][f][v]
+  Sleep 200
   CutNotes()
   RunUtility("dist\build\MoveNotes\MoveNotes.exe """ . script . """")
   Return
@@ -13,6 +14,7 @@
   CutNotes()
   RunUtility("dist\build\BGMize\BGMize.exe")
   Return
+
 CopyNotes()
 {
   _PrepareClipboard("Copy")
