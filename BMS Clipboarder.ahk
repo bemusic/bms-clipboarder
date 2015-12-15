@@ -1,3 +1,4 @@
+
 ^d::
   CopyNotes()
   RunUtility("dist\build\Unmatch\Unmatch.exe")
@@ -40,6 +41,7 @@ RunUtility(utility)
       outClipboard .= lines[A_Index] . "`r`n"
     }
     Clipboard := outClipboard
+    Sleep 100
     Send ^v
   }
   Else
@@ -48,10 +50,8 @@ RunUtility(utility)
   }
 }
 
-_PrepareClipboard(mode)
+_PerformClipboardOperation(mode)
 {
-  Clipboard := "!"
-  Sleep 100
   If (mode = "Copy")
   {
     Send ^c
@@ -60,6 +60,13 @@ _PrepareClipboard(mode)
   {
     Send ^x
   }
+}
+
+_PrepareClipboard(mode)
+{
+  Clipboard := "!"
+  Sleep 100
+  _PerformClipboardOperation(mode)
   While Clipboard == "!"
   {
   }
