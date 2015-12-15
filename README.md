@@ -1,7 +1,7 @@
 # bms-clipboarder [![Build status](https://ci.appveyor.com/api/projects/status/vn6bgwn40prrd1h1?svg=true)](https://ci.appveyor.com/project/dtinth/bms-clipboarder)
 
 
-### Make BMS faster with BMS clipboard scripts [WORK IN PROGRESS]
+### Make BMS faster with BMS clipboard scripts
 
 
 ## 1. Introduction
