@@ -23,7 +23,7 @@ This tool lets you move selected notes easily by typing the desired key sequence
 
 ### 2.2 <kbd>Ctrl</kbd> <kbd>B</kbd> bgmize
 
-This tool moves notes back to BGM lanes.
+This tool moves notes back to BGM columns.
 It can be useful for creating 差分BMS (custom charts).
 
 ![Imgur](http://i.imgur.com/s1SbrDK.gif)
@@ -32,12 +32,36 @@ It can be useful for creating 差分BMS (custom charts).
 ### 2.3 <kbd>Ctrl</kbd> <kbd>D</kbd> unmatch notes
 
 This tool is to be used with [BMS Sound Matcher](http://bemuse.ninja/bms-tools/compiler.html).
-It copies the notes in BGM lane into keysound reference in player lane.
+It copies the notes from BGM columns into “keysound reference” in player’s columns.
+
+![Imgur](http://i.imgur.com/APu4v9H.gif)
+
+You can safely move the resulting notes around (horizontally), or delete them, without affecting original notes in the BGM channel.
+Finally, use [BMS Sound Matcher](http://bemuse.ninja/bms-tools/compiler.html) to compile your BMS file into a playable version.
+
+
+## 3. Requirements
+
+- [__AutoHotKey__](https://www.autohotkey.com/)
+- [__iBMSC 3.0 Delta__](http://www.cs.mcgill.ca/~ryang6/iBMSC/)
+
+
+## 4. Usage
+
+1. [Download the latest version of bms-clipboarder from the __releases page.__](https://github.com/bemusic/bms-clipboarder/releases)
+
+2. Extract the ZIP archive, and double-click __“BMS Clipboarder.ahk”__
+
+3. Make sure that ![(NT)](http://i.imgur.com/0ds2WRN.png) __LN Input Style - NoteTool__ is selected.
+
+4. Drag to select notes.
+
+5. Press the keyboard shortcut that corresponds to the desired tool (see [Section 2 - Included Tools](#2-included-tools)).
 
 
 
 
-## 3. Technical Information
+## 5. Technical Information
 
 __bms-clipboarder__ consists of two main parts:
 
@@ -46,7 +70,7 @@ __bms-clipboarder__ consists of two main parts:
 2. Individual tools (written in Haskell, but possible to write using other languages)
 
 
-### 3.1 bms-clipboarder shell
+### 5.1 bms-clipboarder shell
 
 This is an AutoHotKey script that listens to hotkeys.
 When the key is pressed, firstly, it sends <kbd>Ctrl+X</kbd>/<kbd>Ctrl+C</kbd> key to copy/paste notes.
@@ -56,7 +80,7 @@ Lastly, it copies the result from the individual tool into clipboard and sends <
 You can change the keyboard shortcut AND÷OR add more tools by editing __BMS Clipboarder.ahk__ file.
 
 
-### 3.2 Individual tools
+### 5.2 Individual tools
 
 This is a command-line program that reads BMS clipboard data from Standard Input,
 and return resulting clipboard data to Standard Output.
@@ -132,7 +156,7 @@ iBMSC Clipboard Data xNT
 ```
 
 
-## 4. Development
+## 6. Development
 
 To work on individual tools, you need to install Haskell Platform.
 To compile the source codes into `.exe` files, run:
