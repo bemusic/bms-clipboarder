@@ -15,6 +15,5 @@ build_script:
 
 test_script:
 - cmd: |
-    7z a bms-clipboarder.zip "BMS Clipboarder.ahk" dist\build\*\*.exe
+    7z a bms-clipboarder.zip "BMS Clipboarder.ahk" dist\build\*\*.exe README.md LICENSE
     appveyor PushArtifact bms-clipboarder.zip
-
